@@ -1,0 +1,131 @@
+{
+    "pages": [
+        {
+            "path": "pages/tabbar/index/index",
+            "style": {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": true,
+                "navigationBarBackgroundColor": "#ff7900",
+                "backgroundColorTop": "#ff7900",
+                "onReachBottomDistance": 50
+            }
+        },
+        {
+            "path": "pages/tabbar/extend/extend",
+            "style": {
+                "navigationBarTitleText": "扩展",
+                "navigationBarTextStyle": "black"
+            }
+        },
+		//#ifdef MP-TOUTIAO
+		{
+		    "path": "pagesA/detail/detail2",
+		    "style": {
+		        "navigationBarBackgroundColor": "#fff",
+		        "navigationBarTextStyle": "black",
+		        "backgroundColorTop": "#F7F7F7",
+		        "backgroundColorBottom": "#F7F7F7",
+		        "navigationBarTitleText": "商品详情",
+		        "navigationStyle": "custom"
+		    }
+		},
+        {
+            "path": "pagesA/order/list/list",
+            "style": {
+                "navigationBarBackgroundColor": "#fff",
+                "navigationBarTextStyle": "black",
+                "backgroundColorTop": "#F7F7F7",
+                "backgroundColorBottom": "#F7F7F7",
+                "navigationBarTitleText": "订单列表"
+            }
+        },
+		//#endif
+		{
+		    "path": "pages/tabbar/center/center",
+		    "style": {
+		        "enablePullDownRefresh": true,
+		        "navigationStyle": "custom",
+                "navigationBarTextStyle": "black",
+		        "onReachBottomDistance": 50
+		    }
+		}
+    ],
+	//#ifndef MP-TOUTIAO
+    "subPackages": [
+        {
+            "root": "pagesA",
+            "pages": [
+                {
+                    "path": "detail/detail2",
+                    "style": {
+                        "navigationBarBackgroundColor": "#fff",
+                        "navigationBarTextStyle": "black",
+                        "backgroundColorTop": "#F7F7F7",
+                        "backgroundColorBottom": "#F7F7F7",
+                        "navigationBarTitleText": "商品详情",
+                        "navigationStyle": "custom"
+                    }
+                },
+                {
+                    "path": "order/list/list",
+                    "style": {
+                        "navigationBarBackgroundColor": "#fff",
+                        "navigationBarTextStyle": "black",
+                        "backgroundColorTop": "#F7F7F7",
+                        "backgroundColorBottom": "#F7F7F7",
+                        "navigationBarTitleText": "订单列表"
+                    }
+                }
+            ]
+        }
+    ],
+	//#endif
+	//#ifdef MP-WEIXIN
+    "preloadRule": {
+        "pages/tabbar/center/center": {
+            "network": "all",
+            "packages": [
+                "pagesA"
+            ]
+        }
+    },
+	//#endif
+    "easycom": {
+        "autoscan": true,
+        "custom": {
+            "tui-(.*)": "@/components/thorui/tui-$1/tui-$1.vue"
+        }
+    },
+    "globalStyle": {
+        "navigationBarTextStyle": "white",
+        "navigationBarTitleText": "uni-template",
+        "navigationBarBackgroundColor": "#F8F8F8",
+        "backgroundColor": "#F8F8F8"
+    },
+    "tabBar": {
+        "color": "#666666",
+        "selectedColor": "#5677FC",
+        "backgroundColor": "#FFFFFF",
+        "borderStyle":"white",
+        "list": [
+            {
+                "pagePath": "pages/tabbar/index/index",
+                "text": "首页",
+                "iconPath": "static/images/tabbar/code_gray.png",
+                "selectedIconPath": "static/images/tabbar/code_active.png"
+            },
+            {
+                "pagePath": "pages/tabbar/extend/extend",
+                "text": "extend",
+                "iconPath": "static/images/tabbar/extend_gray.png",
+                "selectedIconPath": "static/images/tabbar/extend_active.png"
+            },
+            {
+                "pagePath": "pages/tabbar/center/center",
+                "text": "account",
+                "iconPath": "static/images/tabbar/thor_gray.png",
+                "selectedIconPath": "static/images/tabbar/thor_active.png"
+            }
+        ]
+    }
+}
