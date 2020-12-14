@@ -1,7 +1,7 @@
 # uni-template
 
 
-### 项目结
+### 项目结构
 ````
 ├── App.vue
 ├── README.md
